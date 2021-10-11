@@ -5,6 +5,8 @@ from django.db import models
 
 from apps.core.models import TimeStampedModel
 
+from .validators import validate_content_type
+
 # Create your models here.
 
 
@@ -26,7 +28,11 @@ class Image(TimeStampedModel):
         related_name="images",
         help_text="User account of the owner of the image.",
     )
-    image = models.ImageField(upload_to=image_directory_path, help_text="Original image file uploaded by the user.")
+    image = models.ImageField(
+        upload_to=image_directory_path,
+        validators=[validate_content_type],
+        help_text="Original image file uploaded by the user.",
+    )
     alt = models.CharField(
         max_length=250, null=True, blank=True, help_text="Image description that can be used in HTML `alt` attribute."
     )

@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     # postgresql / psycopg2 dependencies
     libpq-dev \
+    # python-magic dependencies
+    libmagic1 \
     # cleaning up unused files
     && apt-get clean
 

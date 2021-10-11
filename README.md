@@ -3,14 +3,11 @@
 REST API app created in Django that allows the user to upload and access images in JPEG and PNG format as well as access their thumbnails. Number and heights of the thumbnails depends on user account plan. There are 3 default plans (Basic, Premium, Enterprise), however the admin user can add additional custom plans.
 
 After setting up the project (see Setup below), there are 3 main endpoints:
-- http://127.0.0.1:8000/api/v1/images/
-At this endpoint authenticated users can upload and list images and see links to original image files and thumbnails, as well as view uuid numbers for detailed lookups.
+- http://127.0.0.1:8000/api/v1/images/ - At this endpoint authenticated users can upload and list images and see links to original image files and thumbnails, as well as view uuid numbers for detailed lookups.
 
-- http://127.0.0.1:8000/api/v1/images/uuid:uuid/, where *{uuid:uuid}* is the unique uuid of the image objects created by the user
-At this endpoint authenticated users can view and delete a particular image.
+- http://127.0.0.1:8000/api/v1/images/uuid:uuid/ - where **{uuid:uuid}** is the unique uuid of the image objects created by the user. At this endpoint authenticated users can view and delete a particular image.
 
-- http://127.0.0.1:8000/api/v1/images/uuid:uuid/generate-link/int:expiry_time/, where *\{uuid:uuid\}* is the unique uuid of the image objects created by the user, and *\{int:expiry_time\}* is the desired time for a link to expire
-At this endpoint users can generate expiring links to their images (by default available to Enterprise plan only), that can then be accessed without the need to authenticate.
+- http://127.0.0.1:8000/api/v1/images/uuid:uuid/generate-link/int:expiry_time/ - where **\{uuid:uuid\}** is the unique uuid of the image objects created by the user, and **\{int:expiry_time\}** is the desired time for a link to expire. At this endpoint users can generate expiring links to their images (by default available to Enterprise plan only), that can then be accessed without the need to authenticate.
 
 ## Setup
 

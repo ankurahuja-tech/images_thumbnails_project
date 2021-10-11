@@ -57,8 +57,8 @@ class ThumbnailRenderAPIView(RetrieveAPIView):
 
         else:
             raise PermissionDenied(
-                f"Requested thumbnail height is not available for your user plan. \
-                    Supported heights (px): {available_heights}."
+                f"Requested thumbnail height is not available for your user plan. "
+                f"Supported heights (px): {available_heights}."
             )
 
 
@@ -96,8 +96,8 @@ class ImageGenerateLinkAPIView(RetrieveAPIView):
 
             else:
                 raise PermissionDenied(
-                    f"Invalid expiry time given. Valid expiry time is between {expiry_time_bounds.lower}\
-                        seconds and {expiry_time_bounds.upper} seconds."
+                    f"Invalid expiry time given. Valid expiry time is between {expiry_time_bounds.lower} "
+                    f"seconds and {expiry_time_bounds.upper} seconds."
                 )
         else:
             raise PermissionDenied("You are not authorized to generate expiring links.")

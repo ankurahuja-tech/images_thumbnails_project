@@ -1,5 +1,4 @@
 import datetime
-import json
 import os
 import shutil
 import tempfile
@@ -9,7 +8,6 @@ import pytest
 from django.conf import settings
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import override_settings
-from django.urls import reverse
 from rest_framework.test import APIClient
 
 from apps.images.models import Image

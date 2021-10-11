@@ -1,0 +1,3 @@
+# Heroku sometimes does not build staticfiles folder if its not already there
+# (source: https://devcenter.heroku.com/articles/django-assets);
+# this is a placeholder file for pre-created staticfiles folder.

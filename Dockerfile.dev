@@ -1,0 +1,32 @@
+FROM python:3.9-slim-buster
+
+LABEL maintainer="AnkurAhuja.TECH@gmail.com"
+LABEL description="Development image for Images Thumbnails project app"
+
+# Exposes port for documentational / inter-container interaction purposes
+EXPOSE 8000
+
+# Keeps Python from generating .pyc files in the container
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Turns off buffering for easier container logging
+ENV PYTHONUNBUFFERED=1
+
+# Install apt-packages, "-y" ensures that there is no user prompt ("yes" to all questions)
+RUN apt-get update && apt-get install -y \
+    # meta-package - dependencies for building Python packages 
+    build-essential \
+    # postgresql / psycopg2 dependencies
+    libpq-dev \
+    # cleaning up unused files
+    && apt-get clean
+
+# Set a working directory
+WORKDIR /app
+
+# Copy and install requirements for local development, "-m" flag so it is run as a script
+COPY ./requirements /app/requirements
+RUN pip install -r /app/requirements/local.txt
+
+# Copy project files to docker image
+COPY . /app

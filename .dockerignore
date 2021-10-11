@@ -1,0 +1,33 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+Dockerfile.dev
+docker-compose.yaml
+
+# Python
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+*/*/*/*/__pycache__/
+*/*/*/*/*/__pycache__/
+.env
+.env.production
+.env/
+.venv/
+venv/
+.cache
+*.pyc
+
+# Third parties
+.pytest_cache/
+
+# Other
+robocze/
+robocze.txt
+.vs
+.vscode
+requirements_bck.txt
+Backend (Django) Developer - Images.txt

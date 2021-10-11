@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "images_thumbnails_project"
+version = "0.1.0"
+description = "Project for image processing and thumbnail generating for users with different account plans."
+authors = ["Ankur Ahuja <AnkurAhuja.TECH@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^3.2.7"
+psycopg2-binary = "^2.9.1"
+django-environ = "^0.7.0"
+djangorestframework = "^3.12.4"
+Pillow = "^8.3.2"
+django-imagekit = "^4.0.2"
+black = "^21.9b0"
+isort = "^5.9.3"
+flake8 = "^3.9.2"
+flake8-isort = "^4.0.0"
+pytest = "^6.2.5"
+pytest-django = "^4.4.0"
+django-sesame = "^2.4"
+
+[tool.poetry.dev-dependencies]
+
+[tool.black]
+line-length = 119
+exclude = '''
+  /(
+      \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | migrations
+  )/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
